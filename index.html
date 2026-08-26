@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floricultura Alecrim | Presenteie Quem Você Ama</title>
+<meta name="description" content="Floricultura Alecrim, em Tietê-SP. Buquês, arranjos, plantas e presentes montados na hora, com rosas importadas, girassóis, lírios e flores do campo. Peça pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde-alecrim:#1f3a2e;
+  --verde-alecrim-2:#2c4c3b;
+  --sálvia:#7f9b81;
+  --sálvia-clara:#c9d8c4;
+  --papel:#f7f2e7;
+  --papel-2:#efe6d3;
+  --creme:#fffdf8;
+  --rosa:#c5294f;
+  --rosa-clara:#f3dde1;
+  --dourado:#b9924f;
+  --tinta:#20281f;
+  --tinta-suave:#4a5245;
+  --sombra: 0 18px 40px -20px rgba(31,58,46,.35);
+  --raio: 22px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--papel);
+  color:var(--tinta);
+  font-family:'Work Sans',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  margin:0 0 .4em;
+  color:var(--verde-alecrim);
+}
+.script{
+  font-family:'Caveat',cursive;
+  font-weight:600;
+}
+p{margin:0 0 1em;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+section{position:relative;}
+@media(prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none !important; transition:none !important;}
+}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ---------- leaf shape (signature element, echoes the wreath logo) ---------- */
+.leaf{
+  border-radius: 2% 98% 4% 96% / 98% 4% 96% 2%;
+  overflow:hidden;
+}
+.leaf-alt{
+  border-radius: 98% 2% 96% 4% / 4% 96% 2% 98%;
+  overflow:hidden;
+}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(247,242,231,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(31,58,46,.08);
+  transition:background .3s ease;
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 28px;max-width:1180px;margin:0 auto;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{height:52px;width:52px;object-fit:contain;}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;}
+.brand-text .fc{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--verde-alecrim);letter-spacing:.02em;}
+.brand-text .sub{font-family:'Caveat',cursive;font-size:1rem;color:var(--rosa);font-weight:600;}
+nav.links{display:flex;gap:30px;align-items:center;}
+nav.links a{font-size:.95rem;font-weight:500;color:var(--verde-alecrim-2);position:relative;padding:4px 0;}
+nav.links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--rosa);
+  transition:width .25s ease;
+}
+nav.links a:hover::after{width:100%;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--verde-alecrim);color:#fff;
+  padding:12px 22px;border-radius:100px;font-weight:600;font-size:.92rem;
+  box-shadow:var(--sombra);
+  transition:transform .25s ease, background .25s ease;
+  border:none;cursor:pointer;
+}
+.btn:hover{transform:translateY(-2px);background:var(--rosa);}
+.btn.outline{
+  background:transparent;color:var(--verde-alecrim);border:1.5px solid var(--verde-alecrim);
+  box-shadow:none;
+}
+.btn.outline:hover{background:var(--verde-alecrim);color:#fff;}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--verde-alecrim);margin:5px 0;}
+
+/* ---------- hero ---------- */
+.hero{
+  padding:170px 0 90px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(197,41,79,.08), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(127,155,129,.18), transparent 40%),
+    var(--papel);
+  overflow:hidden;
+}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Caveat',cursive;font-size:1.3rem;color:var(--rosa);font-weight:700;
+  margin-bottom:10px;
+}
+.eyebrow::before{content:"❧";color:var(--sálvia);font-size:1rem;}
+.hero h1{
+  font-size:clamp(2.4rem,4.4vw,3.6rem);
+  line-height:1.08;
+  max-width:12.5em;
+}
+.hero h1 em{
+  font-style:italic;color:var(--rosa);
+}
+.hero p.lead{
+  font-size:1.1rem;color:var(--tinta-suave);max-width:38em;margin-bottom:1.8em;
+}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px;}
+.hero-badges{display:flex;gap:26px;flex-wrap:wrap;font-size:.9rem;color:var(--verde-alecrim-2);font-weight:500;}
+.hero-badges span{display:flex;align-items:center;gap:7px;}
+.hero-badges b{color:var(--sálvia);font-size:1.1rem;}
+.hero-image{position:relative;}
+.hero-image .leaf{
+  box-shadow:var(--sombra);
+  aspect-ratio:4/5;
+}
+.hero-image .leaf img{width:100%;height:100%;object-fit:cover;}
+.hero-image .floaty{
+  position:absolute;bottom:-26px;left:-30px;
+  background:var(--creme);
+  padding:16px 20px;border-radius:16px;
+  box-shadow:0 14px 30px -12px rgba(31,58,46,.3);
+  display:flex;align-items:center;gap:12px;
+  max-width:230px;
+}
+.hero-image .floaty .ico{
+  width:38px;height:38px;border-radius:50%;background:var(--rosa-clara);
+  display:flex;align-items:center;justify-content:center;color:var(--rosa);font-size:1.1rem;flex-shrink:0;
+}
+.hero-image .floaty span{font-size:.82rem;color:var(--tinta-suave);font-weight:500;line-height:1.3;}
+
+/* ---------- marquee strip ---------- */
+.strip{
+  background:var(--verde-alecrim);
+  color:var(--papel-2);
+  overflow:hidden;
+  padding:13px 0;
+  white-space:nowrap;
+}
+.strip .track{display:inline-flex;animation:scroll 32s linear infinite;}
+.strip span{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Caveat',cursive;font-size:1.2rem;font-weight:600;
+  padding:0 30px;color:#eee0c6;
+}
+.strip span::after{content:"❦";color:var(--rosa);font-size:.9rem;margin-left:30px;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---------- section heading ---------- */
+.s-head{max-width:640px;margin:0 auto 50px;text-align:center;}
+.s-head .eyebrow{justify-content:center;display:flex;}
+.s-head h2{font-size:clamp(1.9rem,3vw,2.6rem);}
+.s-head p{color:var(--tinta-suave);}
+section.pad{padding:90px 0;}
+
+/* ---------- occasions ---------- */
+.occasions{background:var(--creme);}
+.occ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.occ-card{
+  background:var(--papel);
+  border-radius:20px;
+  padding:30px 24px;
+  text-align:center;
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
+  cursor:pointer;
+  border:1px solid rgba(31,58,46,.06);
+}
+.occ-card:hover{transform:translateY(-6px);box-shadow:var(--sombra);background:var(--creme);}
+.occ-card .leaf-ico{
+  width:56px;height:56px;margin:0 auto 16px;
+  background:var(--sálvia-clara);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;color:var(--verde-alecrim);
+  border-radius: 2% 98% 4% 96% / 98% 4% 96% 2%;
+}
+.occ-card h4{font-size:1.05rem;margin-bottom:6px;}
+.occ-card p{font-size:.85rem;color:var(--tinta-suave);margin:0;}
+
+/* ---------- filters ---------- */
+.filters{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:46px;
+}
+.filters button{
+  font-family:'Work Sans',sans-serif;
+  background:transparent;border:1.5px solid var(--sálvia-clara);
+  color:var(--verde-alecrim-2);
+  padding:10px 20px;border-radius:100px;font-size:.88rem;font-weight:500;
+  cursor:pointer;transition:all .25s ease;
+}
+.filters button:hover{border-color:var(--sálvia);}
+.filters button.active{
+  background:var(--verde-alecrim);border-color:var(--verde-alecrim);color:#fff;
+}
+
+/* ---------- product grid ---------- */
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:26px;
+}
+.card{
+  background:var(--creme);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 26px -18px rgba(31,58,46,.4);
+  transition:transform .35s ease, box-shadow .35s ease;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sombra);}
+.card .imgwrap{aspect-ratio:1/1;overflow:hidden;position:relative;}
+.card .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.card:hover .imgwrap img{transform:scale(1.07);}
+.card .price-tag{
+  position:absolute;top:12px;right:12px;
+  background:rgba(255,253,248,.92);
+  color:var(--rosa);font-weight:700;font-size:.85rem;
+  padding:6px 13px;border-radius:100px;
+  font-family:'Fraunces',serif;
+}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+.card h3{font-size:1.02rem;margin-bottom:6px;line-height:1.25;}
+.card p{font-size:.85rem;color:var(--tinta-suave);flex:1;margin-bottom:14px;}
+.card .buy{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  background:var(--papel-2);color:var(--verde-alecrim);
+  padding:10px 16px;border-radius:100px;font-size:.85rem;font-weight:600;
+  transition:background .25s ease, color .25s ease;
+}
+.card .buy:hover{background:#25d366;color:#fff;}
+
+.show-more-wrap{text-align:center;margin-top:44px;}
+
+/* ---------- about ---------- */
+.about{background:var(--verde-alecrim);color:var(--papel-2);}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;}
+.about .leaf-alt{aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(0,0,0,.5);}
+.about .leaf-alt img{width:100%;height:100%;object-fit:cover;}
+.about h2{color:#fff;font-size:clamp(1.9rem,3vw,2.5rem);}
+.about .eyebrow{color:#e9c9d1;}
+.about .eyebrow::before{color:var(--sálvia-clara);}
+.about p{color:#d9e3d6;font-size:1.02rem;}
+.about-list{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;}
+.about-list li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:#e7ecdf;}
+.about-list li .n{
+  font-family:'Fraunces',serif;color:var(--rosa-clara);font-weight:600;flex-shrink:0;
+  width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;
+}
+
+/* ---------- steps ---------- */
+.steps{background:var(--papel);}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.step{text-align:center;padding:10px;}
+.step .num{
+  font-family:'Fraunces',serif;font-style:italic;font-size:2.6rem;color:var(--sálvia-clara);
+  margin-bottom:6px;
+}
+.step h4{margin-bottom:8px;}
+.step p{color:var(--tinta-suave);font-size:.92rem;margin:0;}
+
+/* ---------- cta band ---------- */
+.cta-band{
+  background:linear-gradient(120deg, var(--rosa) 0%, #a81f41 100%);
+  color:#fff;text-align:center;padding:70px 0;
+}
+.cta-band h2{color:#fff;font-size:clamp(1.8rem,3vw,2.4rem);}
+.cta-band p{color:#f6d9de;max-width:520px;margin:0 auto 28px;}
+.cta-band .btn{background:#fff;color:var(--rosa);}
+.cta-band .btn:hover{background:var(--verde-alecrim);color:#fff;}
+
+/* ---------- footer ---------- */
+footer{background:#152a20;color:#c7d3c2;padding:70px 0 30px;}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;margin-bottom:50px;}
+.foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.foot-brand img{height:50px;width:50px;object-fit:contain;}
+.foot-brand .fc{font-family:'Fraunces',serif;color:#fff;font-size:1.15rem;}
+.foot-brand .sub{font-family:'Caveat',cursive;color:var(--rosa-clara);font-size:1rem;}
+footer h5{color:#fff;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;margin-bottom:18px;letter-spacing:.03em;text-transform:uppercase;}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;font-size:.92rem;}
+footer ul li a{display:flex;gap:10px;align-items:flex-start;transition:color .2s ease;}
+footer ul li a:hover{color:#fff;}
+footer .ico{color:var(--rosa-clara);flex-shrink:0;}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:24px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-size:.82rem;color:#8fa08a;
+}
+
+/* ---------- whatsapp float ---------- */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:60;
+  background:#25d366;color:#fff;
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 26px -8px rgba(0,0,0,.4);
+  transition:transform .25s ease;
+}
+.wa-float:hover{transform:scale(1.08);}
+
+/* ---------- responsive ---------- */
+@media(max-width:940px){
+  nav.links{display:none;}
+  .menu-toggle{display:block;}
+  .nav{flex-wrap:nowrap;gap:10px;padding:12px 18px;}
+  .brand{min-width:0;}
+  .brand img{height:40px;width:40px;flex-shrink:0;}
+  .brand-text .fc{font-size:.78rem;white-space:nowrap;}
+  .brand-text .sub{font-size:.8rem;white-space:nowrap;}
+  .nav > .btn{padding:10px 14px;font-size:.78rem;white-space:nowrap;}
+  .hero .wrap{grid-template-columns:1fr;}
+  .hero-image{order:-1;max-width:420px;margin:0 auto 20px;}
+  .about .wrap{grid-template-columns:1fr;}
+  .about .leaf-alt{max-width:380px;margin:0 auto;}
+  .occ-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-grid{grid-template-columns:1fr;gap:40px;}
+  .foot-grid{grid-template-columns:1fr;gap:34px;}
+}
+@media(max-width:430px){
+  .brand-text{display:none;}
+  .nav > .btn{padding:9px 12px;font-size:.72rem;}
+}
+@media(max-width:560px){
+  .hero{padding:150px 0 60px;}
+  .hero-ctas{flex-direction:column;align-items:stretch;}
+  .hero-ctas .btn{justify-content:center;}
+  .hero-image .floaty{position:static;margin-top:16px;max-width:none;}
+  section.pad{padding:64px 0;}
+  .occ-grid{grid-template-columns:1fr 1fr;}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;}
+  .card h3{font-size:.92rem;}
+}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="nav">
+    <a href="#inicio" class="brand">
+      <img src="assets/logo-alecrim.png" alt="Floricultura Alecrim">
+      <div class="brand-text">
+        <span class="fc">FLORICULTURA ALECRIM</span>
+        <span class="sub">presenteie quem você ama</span>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#buques">Buquês</a>
+      <a href="#ocasioes">Ocasiões</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" href="https://wa.me/5515998331848?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">
+      Pedir no WhatsApp
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">flores frescas, montadas na hora</div>
+      <h1>Um buquê da Alecrim carrega o <em>cheiro de casa.</em></h1>
+      <p class="lead">Rosas importadas, girassóis, lírios e flores do campo, escolhidas e montadas à mão em Tietê-SP. Cada arranjo sai da nossa loja pronto para virar o melhor momento do dia de alguém.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#buques">Ver buquês</a>
+        <a class="btn outline" href="#ocasioes">Escolher por ocasião</a>
+      </div>
+      <div class="hero-badges">
+        <span><b>121+</b> arranjos disponíveis</span>
+        <span><b>✿</b> rosas importadas</span>
+        <span><b>♡</b> feito à mão, no mesmo dia</span>
+      </div>
+    </div>
+    <div class="hero-image reveal">
+      <div class="leaf">
+        <img src="assets/buque-20.jpg" alt="Buquê luxo com rosas vermelhas importadas, Floricultura Alecrim">
+      </div>
+      <div class="floaty">
+        <div class="ico">📍</div>
+        <span>Tietê &ndash; SP<br>entrega no mesmo dia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>rosas importadas</span><span>girassóis</span><span>lírios</span><span>flores do campo</span><span>orquídeas</span><span>kokedamas</span><span>cestas de café da manhã</span><span>com chocolate</span>
+    <span>rosas importadas</span><span>girassóis</span><span>lírios</span><span>flores do campo</span><span>orquídeas</span><span>kokedamas</span><span>cestas de café da manhã</span><span>com chocolate</span>
+  </div>
+</div>
+
+<!-- ================= OCASIÕES ================= -->
+<section class="pad occasions" id="ocasioes">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="eyebrow">para cada momento</div>
+      <h2>Flores para dizer o que as palavras não dizem.</h2>
+      <p>Cada ocasião pede um tipo de flor. Toque para ver os buquês que combinam.</p>
+    </div>
+    <div class="occ-grid">
+      <div class="occ-card reveal" data-filter="rosas">
+        <div class="leaf-ico">♡</div>
+        <h4>Amor &amp; Romance</h4>
+        <p>Rosas importadas em vermelho, pink e lilás.</p>
+      </div>
+      <div class="occ-card reveal" data-filter="girassol">
+        <div class="leaf-ico">✦</div>
+        <h4>Aniversário</h4>
+        <p>Girassóis e cores vibrantes para comemorar.</p>
+      </div>
+      <div class="occ-card reveal" data-filter="orquideas">
+        <div class="leaf-ico">❀</div>
+        <h4>Presentear com Requinte</h4>
+        <p>Orquídeas e arranjos compostos, um gesto elegante.</p>
+      </div>
+      <div class="occ-card reveal" data-filter="presentes">
+        <div class="leaf-ico">✿</div>
+        <h4>Kits &amp; Presentes</h4>
+        <p>Flores com chocolate, vinho e ursinho de pelúcia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUTOS ================= -->
+<section class="pad" id="buques">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="eyebrow">nossa seleção</div>
+      <h2>Buquês que <em style="font-style:italic;color:var(--rosa);">encantam</em></h2>
+      <p>121 arranjos montados com flores frescas. Escolha o seu e finalize o pedido direto no WhatsApp.</p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="active" data-filter="all">Todos</button>
+      <button data-filter="rosas">Rosas</button>
+      <button data-filter="girassol">Girassóis</button>
+      <button data-filter="lirios">Lírios</button>
+      <button data-filter="campo">Flores do campo</button>
+      <button data-filter="orquideas">Orquídeas</button>
+      <button data-filter="plantas">Plantas &amp; arranjos</button>
+      <button data-filter="kokedama">Kokedama</button>
+      <button data-filter="cones">Cones &amp; mini presentes</button>
+      <button data-filter="chocolate">Com chocolate</button>
+      <button data-filter="presentes">Kits &amp; presentes</button>
+      <button data-filter="cestas">Cestas de café da manhã</button>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+    <div class="show-more-wrap">
+      <button class="btn outline" id="showMoreBtn">Ver mais buquês</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="pad steps">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="eyebrow">é simples assim</div>
+      <h2>Do pedido à entrega</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="num">01</div>
+        <h4>Escolha o buquê</h4>
+        <p>Navegue pela nossa seleção ou filtre por ocasião até achar o arranjo ideal.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">02</div>
+        <h4>Fale no WhatsApp</h4>
+        <p>Confirme cores, mensagem do cartão e horário de entrega com a gente.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">03</div>
+        <h4>Receba fresquinho</h4>
+        <p>Montamos na hora e entregamos em Tietê e região no mesmo dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="pad about" id="sobre">
+  <div class="wrap">
+    <div class="leaf-alt reveal">
+      <img src="assets/buque-09.jpg" alt="Buquê personalizado da Floricultura Alecrim">
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">nossa história</div>
+      <h2>Por que o nome Alecrim?</h2>
+      <p>O alecrim é uma erva de jardim simples, que carrega significados antigos de proteção, lembrança e carinho entre quem se importa. É esse o sentimento que colocamos em cada arranjo: simples, verdadeiro e feito para durar na memória de quem recebe.</p>
+      <p>Ficamos no coração de Tietê-SP, atendendo a cidade e região com flores frescas, embalagens caprichadas e aquele cuidado de floricultura de bairro.</p>
+      <ul class="about-list">
+        <li><span class="n">✓</span> Flores selecionadas e trocadas com frequência</li>
+        <li><span class="n">✓</span> Montagem artesanal, buquê por buquê</li>
+        <li><span class="n">✓</span> Atendimento direto pelo WhatsApp</li>
+        <li><span class="n">✓</span> Combinações com chocolate, vinho e presentes especiais</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="cta-band">
+  <div class="wrap reveal">
+    <h2>Seu presente está a uma mensagem de distância.</h2>
+    <p>Fale com a gente agora e monte o buquê perfeito para o seu momento.</p>
+    <a class="btn" href="https://wa.me/5515998331848?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER / CONTATO ================= -->
+<footer id="contato">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo-alecrim.png" alt="Floricultura Alecrim">
+          <div>
+            <div class="fc">Floricultura Alecrim</div>
+            <div class="sub">presenteie quem você ama</div>
+          </div>
+        </div>
+        <p style="font-size:.9rem;max-width:30em;color:#a9b8a3;">Buquês, arranjos, plantas e presentes montados à mão, com flores frescas, chocolate e vinho para quem quer presentear com carinho.</p>
+      </div>
+      <div>
+        <h5>Atalhos</h5>
+        <ul>
+          <li><a href="#buques">Buquês</a></li>
+          <li><a href="#ocasioes">Ocasiões</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="tel:+551532856299"><span class="ico">☎</span> (15) 3285-6299</span></a></li>
+          <li><a href="https://wa.me/5515998331848" target="_blank" rel="noopener"><span class="ico">✆</span> (15) 99833-1848 &mdash; WhatsApp</a></li>
+          <li><a href="mailto:contato.floralecrim@gmail.com"><span class="ico">✉</span> contato.floralecrim@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Soares+Hungria%2C+59+-+Centro%2C+Tiet%C3%AA+-+SP%2C+18530-000" target="_blank" rel="noopener"><span class="ico">📍</span> Av. Dr. Soares Hungria, 59 &ndash; Centro, Tietê &ndash; SP, 18530-000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Floricultura Alecrim. Todos os direitos reservados.</span>
+      <span>Tietê &ndash; SP, Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5515998331848?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Pedir no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5.3-.4a.6.6 0 0 0 0-.5c-.1-.1-.7-1.6-.9-2.2s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.2 3.1 13.6 13.6 0 0 0 5.3 4.7c.7.3 1.3.5 1.7.6a4.1 4.1 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<script>
+/* ---------------- Product data ---------------- */
+const PRODUCTS = [
+  {n:"Buquê Luxo com Rosas Vermelhas", d:"Buquê grande de rosas vermelhas importadas com folhagem ruscus.", p:410, img:"buque-20.jpg", cat:["rosas"]},
+  {n:"Buquê Personalizado", d:"Rosas brancas, astromélia branca e botões verdes, com folhagem.", p:270, img:"buque-09.jpg", cat:["rosas"]},
+  {n:"Buquê com Rosas Pink Importadas", d:"Rosas pink importadas, alstroemeria e gipsófila.", p:250, img:"buque-02.jpg", cat:["rosas"]},
+  {n:"Buquê com Girassol e Rosas Vermelhas", d:"Rosas vermelhas importadas, girassol, gipsófila, astromélias e folhagem.", p:250, img:"buque-22.jpg", cat:["girassol","rosas"]},
+  {n:"Buquê com Rosas Coloridas", d:"Rosas vermelhas, pink, amarelas e brancas, com astromélia e gipsófila.", p:250, img:"buque-24.jpg", cat:["rosas"]},
+  {n:"Buquê de Girassóis", d:"Girassóis, astromélia branca e folhagem.", p:250, img:"buque-27.jpg", cat:["girassol"]},
+  {n:"Buquê Misto Colorido", d:"Girassol, gérberas coloridas, flor do campo e rosas coloridas.", p:220, img:"buque-04.jpg", cat:["girassol","campo"]},
+  {n:"Buquê com Rosas Lilás Importadas", d:"Rosas lilás importadas, alstroemeria cor de rosa e gipsófila.", p:210, img:"buque-01.jpg", cat:["rosas"]},
+  {n:"Buquê com Lírio Pink", d:"Lírio pink e gipsófila, com folhagem.", p:190, img:"buque-26.jpg", cat:["lirios"]},
+  {n:"Buquê com Lírio Branco", d:"Lírio branco e gipsófila, com folhagem.", p:180, img:"buque-19.jpg", cat:["lirios"]},
+  {n:"Buquê com Copo-de-Leite Roxo e Girassol", d:"Copo-de-leite roxo, girassol, rosas lilás e folhagem.", p:180, img:"buque-21.jpg", cat:["girassol","rosas"]},
+  {n:"Buquê de Flores do Campo Coloridas", d:"Crisântemos e margaridas em tons variados, astromélia laranja e flores do campo.", p:180, img:"buque-18.jpg", cat:["campo"]},
+  {n:"Buquê com 6 Rosas Vermelhas Importadas", d:"Rosas vermelhas importadas, astromélia branca e flores de acabamento.", p:175, img:"buque-08.jpg", cat:["rosas"]},
+  {n:"Buquê com Rosas Amarelas e Brancas", d:"Rosas amarelas, rosas brancas, astromélia e gipsófila.", p:175, img:"buque-29.jpg", cat:["rosas"]},
+  {n:"Buquê com Lírio Pink e Rosas Lilás", d:"Lírio pink, rosas lilás, statice e lisianthus cor de rosa.", p:160, img:"buque-05.jpg", cat:["lirios","rosas"]},
+  {n:"Buquê com 5 Rosas Vermelhas Importadas", d:"Rosas vermelhas importadas com gipsófila e folhagem.", p:160, img:"buque-03.jpg", cat:["rosas"]},
+  {n:"Buquê de Flores do Campo", d:"Mix de crisântemos, margaridas e flores do campo em tons variados.", p:145, img:"buque-23.jpg", cat:["campo"]},
+  {n:"Mini Buquê de Flores do Campo", d:"Crisântemos amarelos, brancos e roxos, gérberas terracota e folhagem.", p:120, img:"buque-34.jpg", cat:["campo"]},
+  {n:"Cone com Rosas e Kinder Bueno", d:"Rosas vermelhas importadas, eucalipto e chocolate Kinder Bueno.", p:120, img:"buque-28.jpg", cat:["cones","chocolate"]},
+  {n:"Arranjo com Lírio Cor de Rosa", d:"Lírio cor de rosa, flores boca-de-leão, mini rosa e eucaflor.", p:130, img:"buque-14.jpg", cat:["lirios"]},
+  {n:"Cone Craft com Rosas Vermelhas", d:"Rosas vermelhas importadas em cone craft, com folhagem.", p:130, img:"buque-10.jpg", cat:["cones","rosas"]},
+  {n:"Cone Especial com Girassol e Chocolate", d:"Girassol, rosas vermelhas importadas, margaridas e chocolates Ferrero Rocher.", p:150, img:"buque-11.jpg", cat:["cones","girassol","chocolate"]},
+  {n:"Cone Especial com Rosas Vermelhas", d:"Rosas vermelhas importadas e gipsófila, cone \"Especial para Você\".", p:100, img:"buque-35.jpg", cat:["cones","rosas"]},
+  {n:"Mini Arranjo com Rosas e Ferrero Rocher", d:"Rosas vermelhas importadas, astromélias amarelas, folhagem e Ferrero Rocher.", p:110, img:"buque-16.jpg", cat:["chocolate","rosas"]},
+  {n:"Arranjo com Girassol e Statice", d:"Girassol, statice, eucaflor e folhagem.", p:110, img:"buque-06.jpg", cat:["girassol"]},
+  {n:"Arranjo com Rosas Pink e Gérberas", d:"Rosas pink e gérberas cor de rosa.", p:110, img:"buque-07.jpg", cat:["rosas"]},
+  {n:"Girassol com Rosa Azul", d:"Girassol, rosa azul e gipsófila azul.", p:95, img:"buque-32.jpg", cat:["girassol"]},
+  {n:"Arranjo com Girassol", d:"Girassóis, astromélia e gipsófila com folhagem.", p:90, img:"buque-12.jpg", cat:["girassol"]},
+  {n:"Mini Arranjo com Rosas Pink Importadas", d:"Rosas pink importadas, alstroemeria branca e gipsófila.", p:85, img:"buque-13.jpg", cat:["rosas"]},
+  {n:"Arranjo com Rosas Pink Importadas", d:"Rosas pink importadas, astromélia branca e gipsófila.", p:85, img:"buque-25.jpg", cat:["rosas"]},
+  {n:"Cone com Rosa e Ferrero Rocher", d:"Rosa vermelha importada, eucalipto e chocolates Ferrero Rocher.", p:45, img:"buque-17.jpg", cat:["cones","chocolate"]},
+  {n:"Cone com Girassol Unitário", d:"Girassol único com astromélia amarela e folhagem, em cone craft.", p:45, img:"buque-31.jpg", cat:["cones","girassol"]},
+  {n:"Cone com Rosa e Sonho de Valsa", d:"Rosa vermelha importada, gipsófila e chocolate Sonho de Valsa.", p:35, img:"buque-33.jpg", cat:["cones","chocolate"]},
+  {n:"Rosa Solteira Importada", d:"Botão de rosa vermelha importada, com trigo decorativo.", p:15, img:"buque-15.jpg", cat:["cones","rosas"]},
+  {n:"Rosa Solteira Enfeitada", d:"Rosa individual enfeitada com trigo decorativo, disponível em várias cores.", p:15, img:"buque-30.jpg", cat:["cones","rosas"]},
+  {n:"Buquê de Flores do Campo com Girassol e Lírio", d:"Flores do campo, alstroemérias, girassol, rosa e lírio.", p:280, img:"buque-36.jpg", cat:["campo","girassol","lirios","rosas"]},
+  {n:"Arranjo para Hall de Entrada", d:"Orquídea, ripsális e mini zamioculcas, em cachepô de aço inox.", p:null, img:"buque-37.jpg", cat:["orquideas","plantas"]},
+  {n:"Buquê Misto com Rosas e Girassol", d:"Rosas vermelhas importadas, girassol e margaridas brancas.", p:250, img:"buque-38.jpg", cat:["rosas","girassol"]},
+  {n:"Mini Arranjo com Rosa Pink e Alstroemélia", d:"Rosa importada pink, alstroemélia branca e tango.", p:110, img:"buque-39.jpg", cat:["rosas"]},
+  {n:"Buquê de Lírios Brancos e Tulipas", d:"Lírios brancos e tulipas.", p:330, img:"buque-40.jpg", cat:["lirios"]},
+  {n:"Buquê Misto de Gérberas e Pinóquio", d:"Gérberas e Pinóquio em tons variados.", p:360, img:"buque-41.jpg", cat:["campo"]},
+  {n:"Buquê de Rosas Importadas Vermelhas", d:"Rosas importadas vermelhas.", p:160, img:"buque-42.jpg", cat:["rosas"]},
+  {n:"Buquê de Rosas Pink com Alstroemélia", d:"Rosas pink importadas, alstroemélia rosa e gipsófila.", p:100, img:"buque-43.jpg", cat:["rosas"]},
+  {n:"Mini Arranjo com Gérbera, Papel Craft", d:"Gérbera e alstroemélia, embalagem em papel craft.", p:70, img:"buque-44.jpg", cat:["campo"]},
+  {n:"Buquê de Lírio Rosa e Goivo", d:"Lírio rosa, goivo rosa e eucalipto.", p:120, img:"buque-45.jpg", cat:["lirios"]},
+  {n:"Buquê com Girassol e Statice", d:"Girassol, ruscus e statice.", p:90, img:"buque-46.jpg", cat:["girassol"]},
+  {n:"Mini Arranjo com Rosa e Pinóquio Amarelo", d:"Rosa vermelha importada e Pinóquio amarelo.", p:95, img:"buque-47.jpg", cat:["rosas"]},
+  {n:"Buquê Misto de Flores do Campo", d:"Flores do campo em tons variados.", p:120, img:"buque-48.jpg", cat:["campo"]},
+  {n:"Buquê de Flores do Campo Silvestre", d:"Flores do campo silvestres, coloridas.", p:150, img:"buque-49.jpg", cat:["campo"]},
+  {n:"Rosa Vermelha Importada Unitária", d:"Rosa vermelha importada, com trigo decorativo.", p:15, img:"buque-50.jpg", cat:["rosas","cones"]},
+  {n:"Buquê Misto com Rosa e Girassol", d:"Flores do campo coloridas, rosa e girassol.", p:220, img:"buque-51.jpg", cat:["campo","rosas","girassol"]},
+  {n:"Buquê com Rosa Inglesa e Flores do Campo", d:"Rosa inglesa e flores do campo coloridas.", p:150, img:"buque-52.jpg", cat:["campo","rosas"]},
+  {n:"Buquê com Gérbera e Tango", d:"Gérbera e tango.", p:120, img:"buque-53.jpg", cat:["campo"]},
+  {n:"Buquê de Flores do Campo e Gérberas", d:"Flores do campo e gérberas.", p:180, img:"buque-54.jpg", cat:["campo"]},
+  {n:"Buquê de Rosa Azul e Alstroemélia", d:"Rosa azul, alstroemélias brancas e gipsófila.", p:180, img:"buque-55.jpg", cat:["rosas"]},
+  {n:"Mini Arranjo com Rosas Vermelhas Importadas", d:"Rosas vermelhas importadas e alstroemélia branca.", p:75, img:"buque-56.jpg", cat:["rosas"]},
+  {n:"Buquê de Rosa Vermelha Importada (24 unidades)", d:"Buquê com 24 rosas vermelhas importadas.", p:390, img:"buque-57.jpg", cat:["rosas"]},
+  {n:"Buquê de Girassol com Rosas e Alstroemélia", d:"Girassol, rosas vermelhas e alstroemélia amarela, papel craft.", p:250, img:"buque-58.jpg", cat:["girassol","rosas"]},
+  {n:"Mini Arranjo com Rosas Pink e Alstroemélia", d:"Rosas pink importadas e alstroemélias.", p:100, img:"buque-59.jpg", cat:["rosas"]},
+  {n:"Arranjo de Rosa Amarela e Alstroemélia", d:"Rosa amarela e alstroemélia branca.", p:320, img:"buque-60.jpg", cat:["rosas"]},
+  {n:"Buquê de Hortênsia, Lírio e Pinóquio", d:"Hortênsia, lírio, goivo e Pinóquio amarelo.", p:360, img:"buque-61.jpg", cat:["lirios","campo"]},
+  {n:"Arranjo Composto com Orquídea e Calas", d:"Orquídea, calas, mini antúrio e grapete.", p:350, img:"buque-62.jpg", cat:["orquideas","plantas"]},
+  {n:"Mini Buquê Flores do Campo \"Bailarina\"", d:"Flores do campo coloridas, estilo bailarina.", p:60, img:"buque-63.jpg", cat:["campo"]},
+  {n:"Buquê \"Bailarina\" com Ursinho", d:"Flores do campo com ursinho de pelúcia \"Amor\".", p:160, img:"buque-64.jpg", cat:["campo","presentes"]},
+  {n:"Mini Buquê de Rosa Azul Importada", d:"Rosa azul importada com alstroemélia branca.", p:105, img:"buque-65.jpg", cat:["rosas"]},
+  {n:"Mini Arranjo com Rosas Vermelhas Importadas", d:"Rosas vermelhas importadas.", p:90, img:"buque-66.jpg", cat:["rosas"]},
+  {n:"Arranjo Composto Orquídea e Antúrio", d:"Orquídea e antúrio, em bacia de louça.", p:235, img:"buque-67.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo com Mini Suculentas e Orquídea", d:"Mini suculentas e mini orquídea, em peça de louça.", p:190, img:"buque-68.jpg", cat:["plantas","orquideas"]},
+  {n:"Arranjo Composto Orquídeas, Antúrio e Bromélia", d:"Orquídeas, antúrio, bromélia e grapete.", p:490, img:"buque-69.jpg", cat:["orquideas","plantas"]},
+  {n:"Buquê Misto com Gérbera, Lírio e Girassol", d:"Gérbera, lírio, girassol e rosa.", p:250, img:"buque-70.jpg", cat:["campo","lirios","girassol","rosas"]},
+  {n:"Arranjo Composto com Orquídea e Espumante", d:"Orquídea, lírio, chocolate, espumante e taça, em cachepô de taboa.", p:390, img:"buque-71.jpg", cat:["orquideas","presentes"]},
+  {n:"Arranjo com Orquídeas e Bromélia", d:"Orquídeas, bromélia e grapete, com cachepô.", p:290, img:"buque-72.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo com Chocolate e Ursinho", d:"Chocolate Ferrero Rocher, ursinho de pelúcia e mini orquídea.", p:210, img:"buque-73.jpg", cat:["presentes","orquideas"]},
+  {n:"Coração de Chocolate com Ursinho", d:"Coração de chocolate com ursinho de pelúcia.", p:150, img:"buque-74.jpg", cat:["presentes"]},
+  {n:"Arranjo com Chocolate e Ursinho de Pelúcia", d:"Chocolate e ursinho de pelúcia.", p:220, img:"buque-75.jpg", cat:["presentes"]},
+  {n:"Arranjo com Espumante, Chocolate e Ursinho", d:"Espumante, chocolate e ursinho de pelúcia.", p:225, img:"buque-76.jpg", cat:["presentes"]},
+  {n:"Arranjo com Mini Orquídea e Cerveja", d:"Mini orquídea, cerveja e amendoim, em cachepô de taboa.", p:150, img:"buque-77.jpg", cat:["presentes","orquideas"]},
+  {n:"Arranjo para Centro de Mesa com Orquídea", d:"Cachepô de vidro com mini orquídea e grapete.", p:220, img:"buque-78.jpg", cat:["orquideas","plantas"]},
+  {n:"Ursinho de Pelúcia com Chocolate", d:"Ursinho de pelúcia com chocolate Ferrero Rocher.", p:135, img:"buque-79.jpg", cat:["presentes"]},
+  {n:"Arranjo com Orquídea, Ursinho e Chocolate", d:"Orquídea, ursinho de pelúcia e chocolate.", p:260, img:"buque-80.jpg", cat:["orquideas","presentes"]},
+  {n:"Arranjo Composto com Vinho e Rosas", d:"Vinho tinto, chocolate, taça e rosas vermelhas importadas.", p:250, img:"buque-81.jpg", cat:["presentes","rosas"]},
+  {n:"Arranjo com Rosa e Boca-de-Leão", d:"Rosa, boca-de-leão e gipsófila.", p:200, img:"buque-82.jpg", cat:["rosas","campo"]},
+  {n:"Cachepô de Coração com Chocolate", d:"Chocolate, ursinho de pelúcia e caneca, em cachepô de coração.", p:220, img:"buque-83.jpg", cat:["presentes"]},
+  {n:"Arranjo com Orquídeas e Gérbera", d:"Orquídeas, gérbera e calandiva.", p:250, img:"buque-84.jpg", cat:["orquideas","campo"]},
+  {n:"Arranjo com Begônia, Chocolate e Balão", d:"Begônia, chocolate, ursinho de pelúcia e balão.", p:280, img:"buque-85.jpg", cat:["presentes"]},
+  {n:"Arranjo Composto com Vinho e Ursinho", d:"Vinho, chocolate, taça, ursinho e rosas vermelhas importadas.", p:350, img:"buque-86.jpg", cat:["presentes","rosas"]},
+  {n:"Arranjo com Vinho, Chocolate e Ursinho", d:"Vinho, taça, chocolate, rosas vermelhas importadas e ursinho.", p:250, img:"buque-87.jpg", cat:["presentes","rosas"]},
+  {n:"Buquê de Alstroemélia e Boca-de-Leão", d:"Alstroemélia colorida e boca-de-leão.", p:180, img:"buque-88.jpg", cat:["campo"]},
+  {n:"Cesta de Café da Manhã", d:"Cesta de café da manhã com begônias.", p:300, img:"buque-89.jpg", cat:["cestas"]},
+  {n:"Arranjo de Girassol e Rosas Coloridas", d:"Girassol e rosas coloridas.", p:160, img:"buque-90.jpg", cat:["girassol","rosas"]},
+  {n:"Rosa Importada no Tubo", d:"Rosa importada, apresentada em tubo com dedicatórias.", p:35, img:"buque-91.jpg", cat:["rosas","cones"]},
+  {n:"Arranjo com Girassol", d:"Buquê de girassóis.", p:85, img:"buque-92.jpg", cat:["girassol"]},
+  {n:"Arranjo de Rosas Vermelhas Importadas", d:"Rosas vermelhas importadas.", p:140, img:"buque-93.jpg", cat:["rosas"]},
+  {n:"Buquê Misto de Gérbera e Rosas", d:"Gérbera, rosas e flores do campo.", p:220, img:"buque-94.jpg", cat:["campo","rosas"]},
+  {n:"Arranjo Composto com Mini Jiboia e Orquídea", d:"Mini jiboia, bromélia e orquídea, em cachepô de taboa.", p:205, img:"buque-95.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo Composto com Orquídeas e Fitônia", d:"Orquídeas, fitônia, bromélia, tilândsia e mini antúrio, em peça de louça.", p:398, img:"buque-96.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo com Begônia e Chocolates", d:"Begônia, xícara, chocolates e bolachas.", p:260, img:"buque-97.jpg", cat:["presentes"]},
+  {n:"Girassol no Cachepô Craft", d:"Girassol único, em cachepô craft.", p:50, img:"buque-98.jpg", cat:["girassol"]},
+  {n:"Arranjo com Orquídeas e Palmeira", d:"Orquídeas, fitônia, palmeira chamaedorea, suculenta e mini antúrio.", p:275, img:"buque-99.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo com Orquídeas e Dracena", d:"Orquídeas e dracena, em peça de louça.", p:360, img:"buque-100.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo Composto com Orquídeas e Folhagem", d:"Orquídeas e folhagem, em cachepô de fibra.", p:240, img:"buque-101.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo no Vidro com Orquídeas", d:"Orquídeas e antúrio, em vaso de vidro.", p:170, img:"buque-102.jpg", cat:["orquideas","plantas"]},
+  {n:"Arranjo no Vidro com Orquídeas e Bromélia", d:"Orquídeas, bromélia e mini antúrio.", p:220, img:"buque-103.jpg", cat:["orquideas","plantas"]},
+  {n:"Cesta de Café da Manhã com Rosas", d:"Cesta de café da manhã com rosas.", p:300, img:"buque-104.jpg", cat:["cestas"]},
+  {n:"Cesta de Café da Manhã Colorida", d:"Cesta de café da manhã com flores coloridas.", p:280, img:"buque-105.jpg", cat:["cestas"]},
+  {n:"Kokedama", d:"Kokedama de folhagem.", p:70, img:"buque-106.jpg", cat:["kokedama"]},
+  {n:"Mini Orquídea no Vidro", d:"Mini orquídea, em vaso de vidro.", p:80, img:"buque-107.jpg", cat:["orquideas"]},
+  {n:"Rosa Unitária Preta", d:"Rosa preta unitária.", p:25, img:"buque-108.jpg", cat:["rosas","cones"]},
+  {n:"Arranjo com Chocolate e Espumante", d:"Chocolate, espumante, rosas importadas e taça, em caixa vitrine.", p:215, img:"buque-109.jpg", cat:["presentes","rosas"]},
+  {n:"Cachepô \"Te Amo\" com Ursinho", d:"Ursinho, vinho, chocolate e rosa.", p:235, img:"buque-110.jpg", cat:["presentes"]},
+  {n:"Kokedama de Folhagem", d:"Kokedama de folhagem vermelha (cordyline).", p:70, img:"buque-111.jpg", cat:["kokedama"]},
+  {n:"Kokedama de Mini Orquídea", d:"Kokedama de mini orquídea.", p:60, img:"buque-112.jpg", cat:["kokedama","orquideas"]},
+  {n:"Kokedama de Samambaia", d:"Kokedama de asplênio pavate (samambaia).", p:60, img:"buque-113.jpg", cat:["kokedama"]},
+  {n:"Kokedama de Ardísia", d:"Kokedama de ardísia, com bagas vermelhas.", p:60, img:"buque-114.jpg", cat:["kokedama"]},
+  {n:"Mini Arranjo com Rosa e Chocolate", d:"Rosa vermelha, margaridas brancas e chocolate.", p:60, img:"buque-115.jpg", cat:["presentes","rosas"]},
+  {n:"Arranjo com Espumante e Mini Orquídea", d:"Espumante, chocolate, mini orquídea e taça.", p:245, img:"buque-116.jpg", cat:["presentes","orquideas"]},
+  {n:"Mini Arranjo \"Especial para Você\"", d:"Girassol, rosas vermelhas e chocolate.", p:120, img:"buque-117.jpg", cat:["presentes","girassol","rosas"]},
+  {n:"Arranjo com Girassol e Rosa Azul", d:"Girassol e rosa azul.", p:70, img:"buque-118.jpg", cat:["girassol","rosas"]},
+  {n:"Arranjo com Girassol e Nutella", d:"Girassol, chocolate e Nutella.", p:150, img:"buque-119.jpg", cat:["presentes","girassol"]},
+  {n:"Coração de Pelúcia com Chocolate", d:"Coração de pelúcia com chocolate e espumante.", p:225, img:"buque-120.jpg", cat:["presentes"]},
+  {n:"Caixa com Rosas e Chocolate", d:"Rosas vermelhas importadas, chocolate e almofada de coração.", p:210, img:"buque-121.jpg", cat:["presentes","rosas"]},
+];
+
+const WA_NUMBER = "5515998331848";
+const grid = document.getElementById('productGrid');
+const PAGE_SIZE = 9;
+let currentFilter = 'all';
+let visibleCount = PAGE_SIZE;
+
+function money(v){
+  return v.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+function waLink(name, price){
+  const text = price === null
+    ? `Olá! Vim pelo site e gostaria de saber o valor do "${name}". Poderia me ajudar?`
+    : `Olá! Vim pelo site e gostaria de pedir o "${name}" (R$ ${money(price)}). Poderia me ajudar?`;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+function render(){
+  const filtered = PRODUCTS.filter(p => currentFilter === 'all' || p.cat.includes(currentFilter));
+  const toShow = filtered.slice(0, visibleCount);
+  grid.innerHTML = toShow.map(p => `
+    <div class="card reveal in">
+      <div class="imgwrap">
+        <img src="assets/${p.img}" alt="${p.n} - Floricultura Alecrim" loading="lazy">
+        <div class="price-tag">${p.p === null ? 'Sob consulta' : 'R$ ' + money(p.p)}</div>
+      </div>
+      <div class="body">
+        <h3>${p.n}</h3>
+        <p>${p.d}</p>
+        <a class="buy" href="${waLink(p.n, p.p)}" target="_blank" rel="noopener">Pedir no WhatsApp ↗</a>
+      </div>
+    </div>
+  `).join('');
+
+  const btn = document.getElementById('showMoreBtn');
+  btn.style.display = filtered.length > visibleCount ? 'inline-flex' : 'none';
+}
+
+document.querySelectorAll('.filters button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    visibleCount = PAGE_SIZE;
+    render();
+  });
+});
+
+document.querySelectorAll('.occ-card').forEach(card=>{
+  card.addEventListener('click', ()=>{
+    const f = card.dataset.filter;
+    document.querySelectorAll('.filters button').forEach(b=>{
+      b.classList.toggle('active', b.dataset.filter === f);
+    });
+    currentFilter = f;
+    visibleCount = PAGE_SIZE;
+    render();
+    document.getElementById('buques').scrollIntoView({behavior:'smooth'});
+  });
+});
+
+document.getElementById('showMoreBtn').addEventListener('click', ()=>{
+  visibleCount += PAGE_SIZE;
+  render();
+});
+
+render();
+
+/* ---------------- reveal on scroll ---------------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------------- mobile menu ---------------- */
+const menuToggle = document.getElementById('menuToggle');
+const links = document.querySelector('nav.links');
+menuToggle.addEventListener('click', ()=>{
+  const open = links.style.display === 'flex';
+  links.style.display = open ? 'none' : 'flex';
+  links.style.cssText = open ? 'display:none;' : 'display:flex;flex-direction:column;position:fixed;top:78px;left:0;right:0;background:var(--creme);padding:22px 28px;gap:18px;box-shadow:0 14px 30px -14px rgba(0,0,0,.2);';
+});
+</script>
+</body>
+</html>
