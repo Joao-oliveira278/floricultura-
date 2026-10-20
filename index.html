@@ -301,6 +301,27 @@ section.pad{padding:90px 0;}
 .cta-band .btn{background:#fff;color:var(--rosa);}
 .cta-band .btn:hover{background:var(--verde-alecrim);color:#fff;}
 
+
+/* ---------- avaliações ---------- */
+.reviews{background:var(--creme);}
+.review-box{
+  max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:center;
+  background:var(--papel);border:1px solid rgba(31,58,46,.08);border-radius:28px;padding:48px 52px;box-shadow:var(--sombra);
+}
+.review-box .stars{color:var(--dourado);font-size:1.7rem;letter-spacing:5px;margin-bottom:10px;}
+.review-box h2{font-size:clamp(1.7rem,2.8vw,2.3rem);}
+.review-box p{color:var(--tinta-suave);}
+.review-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:8px;}
+.review-actions small{color:var(--tinta-suave);font-size:.82rem;}
+.review-qr{text-align:center;}
+.review-qr img{width:100%;max-width:190px;margin:0 auto 10px;border-radius:14px;background:#fff;padding:8px;box-shadow:0 10px 26px -18px rgba(31,58,46,.5);image-rendering:pixelated;}
+.review-qr span{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--rosa);font-weight:600;line-height:1.2;display:block;}
+@media(max-width:760px){
+  .review-box{grid-template-columns:1fr;padding:36px 26px;gap:30px;text-align:center;}
+  .review-actions{justify-content:center;}
+}
+@media(max-width:940px){.review-qr{display:none;}.review-box{grid-template-columns:1fr;text-align:center;}.review-actions{justify-content:center;}}
+
 /* ---------- footer ---------- */
 footer{background:#152a20;color:#c7d3c2;padding:70px 0 30px;}
 .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;margin-bottom:50px;}
@@ -536,6 +557,27 @@ footer .ico{color:var(--rosa-clara);flex-shrink:0;}
   </div>
 </section>
 
+<!-- ================= AVALIAÇÕES ================= -->
+<section class="pad reviews" id="avaliar">
+  <div class="wrap">
+    <div class="review-box reveal">
+      <div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <h2>Gostou da sua experiência? Conte pra gente!</h2>
+        <p>Sua avaliação no Google leva menos de um minuto e ajuda outras pessoas de Tietê e região a conhecerem a Floricultura Alecrim.</p>
+        <div class="review-actions">
+          <a class="btn" href="https://g.page/r/CVYgAQeR02_2EAE/review" target="_blank" rel="noopener">★ Avaliar no Google</a>
+          <small>Abre o Google em uma nova aba</small>
+        </div>
+      </div>
+      <div class="review-qr">
+        <img src="data:image/png;base64,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" alt="QR code para avaliar a Floricultura Alecrim no Google" width="190" height="190">
+        <span>aponte a câmera do celular e avalie</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CTA BAND ================= -->
 <section class="cta-band">
   <div class="wrap reveal">
@@ -565,6 +607,7 @@ footer .ico{color:var(--rosa-clara);flex-shrink:0;}
           <li><a href="#buques">Buquês</a></li>
           <li><a href="#ocasioes">Ocasiões</a></li>
           <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="https://g.page/r/CVYgAQeR02_2EAE/review" target="_blank" rel="noopener">★ Avaliar no Google</a></li>
         </ul>
       </div>
       <div>
